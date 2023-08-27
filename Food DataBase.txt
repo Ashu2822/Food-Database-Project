@@ -1,0 +1,163 @@
+CREATE TABLE Restaurants(
+Restaurant_ID int PRIMARY KEY, 
+Restaurant_Name char(50), 
+Restaurant_Address varchar(20),
+Restaurant_Type char(20),
+Rest_Phone VARCHAR(15) NOT NULL 
+);
+
+insert into Restaurants values
+( 101, 'CityPride', 'Kothrud', 'Veg', '9223344221'), ( 102, 'Divine', 'KoregaonPark', 'Non-Veg', '9322445555'), ( 103, 'Marriott', 'SBRoad', 'Non-Veg', '9933442211'), ( 104, 'Regency Hotel', 'Baner', 'Veg', '9234556622'), (105, 'Mandarin Oriental', 'Karvenagar', 'Veg', '9433225511'), ( 106, 'Four Seasons Hotel', 'Deccan', 'Non-Veg', '9566333241'), ( 107, 'El Rancho Casino', 'Vimannagar', 'Veg', '9877664532'), ( 108, 'Clarion Hotel and Casino', 'Katraj', 'Non-Veg', '9654324677'), ( 109, 'Continental Hotel and Casino', 'Hadapsar', 'Non-Veg', '9543245677'),( 110, 'Ritz Plaza Hotel', 'Wakad', 'Non-Veg', '9545362253'), ( 111, 'W Hotel', 'Kondhwa', 'Veg', '9435662245'),( 112, 'St Regis Hotels', 'Kothrud', 'Veg,Non-Veg', '8437463733'),( 113, 'Hyatt', 'Baner', 'Veg,Non-Veg', '7746464748'),( 114, 'Belmond', 'Aundh', 'Veg', '8474738992'),( 115, 'Rosewood Hotels & Resorts', 'Warje', 'Non-Veg', '8337828282'),( 116, 'Ritz-Carlton Hotel', 'PuneCity', 'Veg', '8399292838'),( 117, 'Kokani', 'Kothrud', 'Veg,Non-Veg', '7378929289'),( 118, 'The Peninsula Chicago', 'ShivajiNagar', 'Veg', '8373373833'),( 119, 'Fort Harrison Hotel', 'Kharadi', 'Non-Veg', '7373782828'),( 120, 'Kondares', 'Hinjawadi', 'Veg,Non-Veg', '7373882828');
+
+
+
+
+CREATE TABLE Menu(
+M_id INT PRIMARY KEY,
+Restaurant_ID INT,
+Item_Name varchar(40) NOT NULL, 
+Price int NOT NULL,
+FOREIGN KEY (Restaurant_ID) REFERENCES Restaurants(Restaurant_ID));
+
+insert into Menu values
+(901,101,'Rice,Noodles',50),(902,101,'Paneer,Roti',80),(903,101,'Veggie,Roti',50),(904,101,'VegBiryani',80),(905,101,'PaneerTikka',90),(906,101,'VeggieTikka',60),(907,101,'PaneerBiryani',150),(908,101,'VegKoftaBiryani',150),(909,101,'PaneerMasala',160),(910,101,'IceCream',20),(911,101,'GulabJam',40),(912,101,'Shrikhand',40),(913,101,'WaterBottle',20),(914,101,'ColdDrinkBottle',50),(915,102,'Rice,Noodles',50),(916,102,'Chicken,Roti',100),(917,102,'Mutton,Roti',150),(918,102,'chinese',140),(919,102,'ChickenKebab',100),(920,102,'MuttonRaan',900),(921,102,'ChickenRaan',650),(922,102,'ChickenTikka',140),(923,102,'MuttonRassa',190),(924,102,'FishTikka',50),(925,102,'chickenKebabBiryani',190),(926,102,'MuttonBiryani',250),(927,102,'ChickenBiryani',150),(928,102,'WaterBottle',20),(929,102,'ColdDrinkBottle',50),(930,103,'Rice,Noodles',50),(931,103,'Chicken,Roti',100),(932,103,'Mutton,Roti',150),(933,103,'chinese',140),(934,103,'ChickenKebab',100),(935,103,'MuttonRaan',900),(936,103,'ChickenRaan',650),(937,103,'ChickenTikka',140),(938,103,'MuttonRassa',190),(939,103,'chickenKebabBiryani',190),(940,103,'MuttonBiryani',250),(941,103,'ChickenBiryani',150),(942,103,'WaterBottle',20),(943,104,'Paneer,Roti',80),(944,104,'VegBiryani',80),(945,104,'PaneerTikka',90),(946,104,'PaneerBiryani',150),(947,104,'VegKoftaBiryani',150),(948,104,'IceCream',20),(949,105,'Paneer,Roti',80),(950,105,'VegBiryani',80),(951,105,'PaneerTikka',90),(952,105,'PaneerBiryani',150),(953,105,'IceCream',20),(954,106,'Chicken,Roti',100),(955,106,'chickenBiryani',140),(956,106,'ChickenRaan',650),(957,106,'ChickenTikka',140),(958,106,'chickenKebabBiryani',190),(959,106,'chinese',150),(960,107,'Paneer,Roti',80),(961,107,'VegBiryani',80),(962,107,'PaneerTikka',90),(963,107,'PaneerBiryani',150),(964,108,'Chicken,Roti',100),(965,108,'chickenBiryani',140),(966,108,'ChickenRaan',650),(967,108,'ChickenTikka',140),(968,108,'chinese',150),(969,109,'Rice,Noodles',50),(970,109,'chinese',140),(971,109,'ChickenTikka',140),(972,109,'chickenKebabBiryani',190),(973,109,'MuttonBiryani',250),(974,109,'ChickenBiryani',150),(975,110,'chickenBiryani',140),(976,110,'ChickenMasala',650),(977,110,'ChickenTikka',140),(978,110,'chickenKebabBiryani',190),(979,110,'chinese',150),(980,111,'VegBiryani',80),(981,111,'PaneerTikka',90),(982,111,'PaneerBiryani',150),(983,111,'IceCream',20),(984,112,'VegBiryani',80),(985,112,'PaneerTikka',90),(986,112,'PaneerBiryani',150),(987,112,'MuttonBiryani',250),(988,112,'ChickenBiryani',150),(989,112,'ChickenTikka',140),(990,113,'VegBiryani',80),(991,113,'PaneerTikka',90),(992,113,'PaneerBiryani',150),(993,113,'MuttonBiryani',250),(994,113,'ChickenBiryani',150),(995,113,'ChickenTikka',140),(996,114,'VegBiryani',80),(997,114,'PaneerTikka',90),(998,114,'PaneerBiryani',150),(999,114,'IceCream',20),(1000,115,'chickenBiryani',140),(1001,115,'EggBiryani',650),(1002,115,'MuttonBiryani',190),(1003,115,'chinese',150),(1004,116,'VegBiryani',80),(1005,116,'PaneerTikka',90),(1006,116,'PaneerBiryani',150),(1007,116,'IceCream',20),(1008,117,'VegBiryani',80),(1009,117,'PaneerTikka',90),(1010,117,'PaneerBiryani',150),(1011,117,'MuttonBiryani',250),(1012,117,'ChickenBiryani',150),(1013,117,'ChickenTikka',140),(1014,118,'VegBiryani',80),(1015,118,'PaneerTikka',90),(1016,118,'PaneerBiryani',150),(1017,118,'IceCream',20),(1018,119,'chickenBiryani',140),(1019,119,'EggBiryani',650),(1020,119,'MuttonBiryani',190),(1021,119,'chinese',150),(1022,120,'VegBiryani',80),(1023,120,'PaneerTikka',90),(1024,120,'PaneerBiryani',150),(1025,120,'MuttonBiryani',250),(1026,120,'ChickenBiryani',150),(1027,120,'ChickenTikka',140);
+
+
+
+
+CREATE TABLE Customers (
+Cus_id INT PRIMARY KEY AUTO_INCREMENT,
+Name VARCHAR(50) NOT NULL,
+Email VARCHAR(50) NOT NULL,
+Password VARCHAR(50) NOT NULL,
+Phone VARCHAR(15) NOT NULL,
+UNIQUE (email)
+);
+
+insert into Customers values
+(1, 'Aditya Gawade', 'adityagawade@gmail.com','Aditya@123', '1111122222'),
+(2, 'Ashish Kondare' , 'ashishkondare@gmail.com','Ashish@123', '2222233333'),
+(3, 'Viraj Walanj' , 'virajwalanj@gmail.com','Viraj@123','3333344444'),
+(4, 'Akash Chavan' , 'akashchavan@gmail.com', 'Akash@123','4444455555'),
+(5, 'Sourabh Gawade', 'sourabhgawade@gmail.com', 'Sourabh@123', '5555566666'),
+(6, 'Manasi Zagade', 'manasizagade@gmail.com', 'Manasi@123', '6666677777'),
+(7, 'Pooja Vaddepalli', 'poojawadepalli@gmail.com', 'Pooja@123', '7777788888'),
+(8, 'Ashwini Khade', 'ashwinikhade@gmail.com', 'Ashwini@123', '8888899999'),
+(9, 'Ashwini Patil', 'ashwinipatil@gmail.com', 'Ashwini@123', '9999900000'),
+(10, 'Jitesh Deore', 'jiteshdeore@gmail.com', 'Jitesh@123', '0000011111'),
+(11, 'Ram Gore', 'ramgore@gmail.com', 'Ram@123', '1212121212'),
+(12, 'Rushikesh Deshmukh', 'rushikesh@gmail.com', 'Rushikesh@123', '1313131313'),
+(13, 'Rohan Misal', 'rohanmisal@gmail.com', 'Rohan@123', '1414141414'),
+(14, 'Sahil kamble', 'sahilkamble@gmail,com', 'Sahil@123', '1515151515'),
+(15, 'Ashutosh Mulay', 'ashumulay@gmail.com', 'Aashu@123', '1616161616'),
+(16, 'Purvashri khanolkar', 'purvikhanolkar@gmail.com', 'Purvi@123', '1717171717'),
+(17, 'Utkarsha Ajgaonker', 'utkarsha@gmail.com', 'Utkarsha@123', '1818181818'),
+(18, 'Sakshi Pednekar', 'sakshipedne@gmail.com', 'Sakshi@123', '1919191919'),
+(19, 'Yugandhar Kanekar', 'yugukane@gmail.com', 'Yugu@123', '2020020202'),
+(20, 'Vaibhav Borkar', 'vaibhavborkar@gmail.com', 'Vaibhav@123', '2121212121');
+
+
+
+
+CREATE TABLE Address (
+Address_id INT PRIMARY KEY AUTO_INCREMENT,
+Cus_id INT NOT NULL,
+Area VARCHAR(255) NOT NULL,
+City  VARCHAR(255) NOT NULL,
+Pincode INT NOT NULL,
+FOREIGN KEY (Cus_id) REFERENCES Customers(Cus_id)
+);
+
+insert into Address values
+(501, 1,'Katraj','Pune',411048),(502, 2,'Kondhwa','Pune',411012),(503, 3,'Kothrud','Pune',411046),(504, 4,'Karvenagar','Pune',421048),(505, 5,'Swargate','Pune',413048),(506, 6,'Dhankawdi','Pune',411249),(507, 7,'Narhe','Pune',421439),(508, 8,'Phursungi','Pune',432068),(509, 9,'Hadapsar','Pune',401143),(510, 10,'Mundhwa','Pune',432948),(511, 11,'BajiraoRoad','Pune',411168),(512, 12,'FCRoad','Pune',432568),(513, 13,'JMRoad','Pune',412548),(514, 14,'KoregaonPark','Pune',412388),(515, 15,'LaxmiRoad','Pune',432448),(516, 16,'MGRoad','Pune',442344),(517, 17,'Bhosari','Pune',432476),(518, 18,'PimpleSaudagar','Pune',434598),(519, 19,'Hinjawadi','Pune',4239854),(520, 20,'Nigadi','Pune',434759);
+
+
+
+
+CREATE TABLE Drivers (
+Driver_id INT PRIMARY KEY,
+Name VARCHAR(30) NOT NULL,
+Mobile_No VARCHAR(15) NOT NULL,
+Address VARCHAR(20)
+);
+
+insert into Drivers values
+(401,'Ashish','8456574541','Hadapsar'),(402,'Aditya','9745418456','Hinjawadi'),(403,'Rohan','7454184565','Katraj'),(404,'Kamlesh','9489791644','Hadapsar'),(405,'Jani','8456555112','Deccan'),(406,'Aniket','8548944541','Vimannagar'),(407,'Ajay','8456844558','Kharadi'),(408,'Babu','8441565745','Wakad'),(409,'Kamlesh','8461654852','Kondhwa'),(410,'Viraj','9454452364','Kothrud'),(411,'Ramesh','7458954456','Narhe'),(412,'Pooja','9556461412','Baner'),(413,'Rani','8799663354','PuneCity'),(414,'Akash','8956452462','Warje'),(415,'Aarti','9857564552','Kothrud');
+
+
+
+
+CREATE TABLE Orders (
+Order_id INT PRIMARY KEY AUTO_INCREMENT,
+Restaurant_ID INT,
+Cus_id INT,
+Driver_id INT,
+M_id INT,
+Date DATE,
+Address VARCHAR(20),
+FOREIGN KEY (Restaurant_ID) REFERENCES Restaurants(Restaurant_ID),
+FOREIGN KEY (Cus_id) REFERENCES Customers(Cus_id),
+FOREIGN KEY (Driver_id) REFERENCES Drivers(Driver_id),
+FOREIGN KEY (M_id) REFERENCES Menu(M_id)
+);
+
+insert into Orders values
+(201,110,1,408,902,'2023-07-02','Wakad,pune'),(202,104,2,412,915,'2023-07-04','Baner,Pune'),(203,108,3,403,920,'2023-07-03','Katraj,Pune'),(204,115,4,411,922,'2023-07-04','Dhayari,Pune'),(205,109,17,401,909,'2023-07-04','Hadapsar,Pune'),(206,115,6,411,904,'2023-07-05','Narhe,Pune'),(207,115,7,414,930,'2023-07-06','Warje,Pune'),(208,115,7,414,902,'2023-07-06','Shivane,Pune'),(209,109,8,410,908,'2023-07-06','Swargate,Pune'),(210,119,12,407,911,'2023-07-09','Vagholi,Pune'),(211,101,15,403,950,'2023-07-10','Kothrud,Pune'),(212,120,13,402,943,'2023-07-10','Hinjawadi,Pune'),(213,101,9,415,923,'2023-07-11','Kothrud,Pune'),(214,113,15,412,1000,'2023-07-12','Chichwad,Pune'),(215,106,11,413,965,'2023-07-13','Deccan,Pune'),(216,103,14,413,922,'2023-07-14','GokhaleNagar,Pune'),(217,105,17,414,923,'2023-07-15','Karvenagar,Pune'),(218,116,15,405,956,'2023-07-15','SadashivPeth,Pune'),(219,101,16,403,958,'2023-07-15','Kothrud,Pune'),(220,117,19,415,946,'2023-07-16','Kothrud,Pune'),(221,109,1,401,910,'2023-07-16','Hadapsar,Pune'),(222,107,2,403,919,'2023-07-16','Katraj,Pune'),(223,120,13,402,906,'2023-07-17','Hinjawadi,Pune'),(224,111,4,409,918,'2023-07-18','Kondhwa,Pune'),(225,108,17,403,925,'2023-07-19','Katraj,Pune'),(226,107,6,407,933,'2023-07-20','Wagholi,Pune'),(227,107,11,406,966,'2023-07-21','ShriramChowk,Pune'),(228,111,7,409,905,'2023-07-22','Kondhwa,Pune'),(229,109,18,401,901,'2023-07-23','Hadapsar,Pune'),(230,108,14,409,911,'2023-07-23','Katraj,Pune'),(231,114,8,411,973,'2023-07-23','Narhe,Pune'),(232,114,12,412,994,'2023-07-23','Aundh,Pune'),(233,102,9,404,977,'2023-07-23','Magarpatta,Pune'),(234,102,12,406,989,'2023-07-25','KoregaonPark,Pune'),(235,109,10,401,995,'2023-07-26','Hadapsar,Pune'),(236,114,4,403,999,'2023-07-27','Bibewadi,Pune'),(237,109,17,401,1013,'2023-07-28','KamlaNagar,Pune'),(238,107,2,404,1009,'2023-07-29','Magarpatta,Pune'),(239,113,1,408,1021,'2023-07-30','Chinchwad,Pune'),(240,112,16,415,1025,'2023-07-30','Kothrud,Pune'),(241,116,15,405,971,'2023-07-30','SomwarPeth,Pune'),(242,119,12,407,964,'2023-08-01','Kharadi,Pune'),(243,119,13,401,960,'2023-08-02','Amanora,Pune'),(244,104,14,408,956,'2023-08-03','Sangvi,Pune'),(245,101,15,403,950,'2023-08-04','Kothrud,Pune'),(246,107,16,407,944,'2023-08-05','Wagholi,Pune'),(247,118,17,405,937,'2023-08-06','ApteRoad,Pune'),(248,119,6,409,928,'2023-08-06','Kondhwa,Pune'),(249,109,18,404,917,'2023-08-06','Hadapsar,Pune'),(250,104,13,412,1000,'2023-08-07','Baner,Pune'),(251,105,14,403,1023,'2023-08-08','KarveNagar,Pune'),(252,118,13,401,931,'2023-08-09','ShriramChowk,Pune'),(253,113,19,412,918,'2023-08-10','Ravet,Pune'),(254,104,15,408,902,'2023-08-11','Sangvi,Pune'),(255,109,19,401,922,'2023-08-12','Hadapsar,Pune'),(256,118,18,406,963,'2023-08-13','Ramwadi,Pune'),(257,120,15,402,1000,'2023-08-13','DangeChowk,Pune'),(258,110,1,408,945,'2023-08-15','Wakad,pune'),(259,120,7,402,976,'2023-08-15','Hinjewadi,Pune'),(260,117,18,415,902,'2023-08-15','Kothrud,Pune');
+
+
+
+
+CREATE TABLE Payment(
+Payment_id INT PRIMARY KEY AUTO_INCREMENT,
+Order_id INT NOT NULL,
+Payment_mode VARCHAR(60) NOT NULL,
+Amount DECIMAL(10,2) NOT NULL,
+FOREIGN KEY (Order_id) REFERENCES Orders(Order_id)
+);
+
+insert into Payment values
+(5001,201,'online',80.00),(5002,202,'online',50.00),(5003,203,'online',100.00),(5004,204,'cash',140.00),(5005,205,'online',160.00),(5006,206,'online',80.00),(5007,207,'cash',50.00),(5008,208,'online',80.00),(5009,209,'online',150.00),(5010,210,'cash',40.00),(5011,211,'online',80.00),(5012,212,'card',80.00),(5013,213,'online',190.00),(5014,214,'card',140.00),(5015,215,'online',140.00),(5016,216,'cash',140.00),(5017,217,'online',190.00),(5018,218,'cash',650.00),(5019,219,'cash',190.00),(5020,220,'online',150.00),(5021,221,'online',20.00),(5022,222,'cash',100.00),(5023,223,'online',60.00),(5024,224,'cash',140),(5025,225,'cash',190.00),(5026,226,'cash',140.00),(5027,227,'online',650.00),(5028,228,'cash',90.00),(5029,229,'online',50.00),(5030,230,'cash',40.00),(5031,231,'online',250.00),(5032,232,'online',150.00),(5033,233,'online',140.00),(5034,234,'online',140.00),(5035,235,'cash',140.00),(5036,236,'online',20.00),(5037,237,'cash',140.00),(5038,238,'online',90.00),(5039,239,'online',150.00),(5040,240,'online',250),(5041,241,'online',140.00),(5042,242,'online',100.00),(5043,243,'cash',80.00),(5044,244,'online',650.00),(5045,245,'online',80.00),(5046,246,'online',80.00),(5047,247,'online',140.00),(5048,248,'online',20.00),(5049,249,'online',150.00),(5050,250,'online',140.00),(5051,251,'cash',90.00),(5052,252,'online',100.00),(5053,253,'online',140.00),(5054,254,'cash',80.00),(5055,255,'online',140.00),(5056,256,'online',150.00),(5057,257,'cash',140.00),(5058,258,'cash',90.00),(5059,259,'online',650.00),(5060,260,'online',80.00);
+
+
+
+
+CREATE TABLE Rating (
+Rating_id INT PRIMARY KEY AUTO_INCREMENT,
+Cus_id INT NOT NULL,
+Restaurant_id INT NOT NULL,
+Rating INT NOT NULL,
+FOREIGN KEY (Cus_id) REFERENCES Customers(Cus_id),
+FOREIGN KEY (Restaurant_id) REFERENCES Restaurants(Restaurant_id)
+);
+
+insert into Rating values
+(1001, 2, 101, 3),
+(1002, 3, 103, 4),
+(1003, 4, 107, 5),
+(1004, 5, 106, 6),
+(1005, 7, 105, 7),
+(1006, 2, 107, 3),
+(1007, 5, 108, 5),
+(1008, 8, 104, 8),
+(1009, 4, 109, 9),
+(1010, 12, 111, 10),
+(1011, 14, 117, 2),
+(1012, 16, 119, 4),
+(1013, 17, 116, 6),
+(1014, 19, 118, 8),
+(1015, 11, 115, 2),
+(1016, 20, 114, 7),
+(1017, 2, 113, 9),
+(1018, 15, 116, 2),
+(1019, 16, 117, 5),
+(1020, 17, 118, 4),
+(1021, 18, 116, 1),
+(1022, 17, 115, 6),
+(1023, 11, 114, 1),
+(1024, 7, 114, 4),
+(1025, 5, 119, 8),
+(1026, 2, 116, 9),
+(1027, 8, 115, 10),
+(1028, 11, 119, 2),
+(1029, 15, 115, 4),
+(1030, 19, 120, 5);
